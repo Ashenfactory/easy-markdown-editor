@@ -2249,7 +2249,7 @@ EasyMDE.prototype.render = function (el) {
                 return;
             }
             if (!parentEl.hasAttribute('data-img-src')) {
-                var srcAttr = parentEl.innerText.match('\\((.*)\\)'); // might require better parsing according to markdown spec
+                var srcAttr = parentEl.innerText.match(/\((?:\s*)?(.*?)(?:\s(["'])(?:(?!\2).)*?\2)?\)/); // might require better parsing according to markdown spec
                 if (!window.EMDEimagesCache) {
                     window.EMDEimagesCache = {};
                 }
